@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mermaid Reader</title>
+  <link rel="stylesheet" href="./lib/mermaid.css">
+  <script src="./lib/mermaidAPI.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    mermaidAPI.initialize({
+        theme: "default",
+        startOnLoad:false
+    });
+
+    // a file is treated as erroneous until proven otherwise
+    var errorFileNames = [];
+    var remainingToRead = 0;
+
+    function updateParseErrors() {
+      if (remainingToRead > 0 || errorFileNames.length === 0) {
+        return;
+      }
+      var errorFilesString = errorFileNames.reduce(function(acc, cur) {
+          seperator = acc !== "" ? ", " : "";
+          return acc + seperator + cur;
+        }, "");
+      var errorMsg = "Error: the following files could not be uploaded: "
+
+      var msgDisplay = document.getElementById("error_msg");
+      msgDisplay.hidden = false;
+      msgDisplay.innerHTML = errorMsg + " " + errorFilesString;
+     }
+     mermaidAPI.parseError = updateParseErrors;
+
+     function clearParseErrors() {
+       errorFileNames = [];
+       var msgDisplay = document.getElementById("error_msg");
+       msgDisplay.hidden = true;
+       msgDisplay.innerHTML = "";
+     }
+
+     function loadFiles() {
+       clearParseErrors();
+       document.getElementById("container").innerHTML = "";
+       var fileList = document.getElementById("files_input").files;
+       remainingToRead = fileList.length;
+       Array.prototype.forEach.call(fileList, function(file, index){
+         errorFileNames.push(file.name); // file is erroneous until it is rendered
+         
+         var reader = new FileReader();
+         
+         reader.onload = function(event){
+           remainingToRead--;
+           mermaidAPI.render("mermaid-" + index, event.target.result, function (code) {
+             document.getElementById("container").insertAdjacentHTML("beforeend", code);
+             // remove file from list of errors
+             errorFileNames = errorFileNames.filter(function(name){ return name !== file.name });
+             updateParseErrors();
+           });
+         }
+
+         reader.onabort = reader.onerror = function (err){
+           remainingToRead--;
+           displayParseErrors();
+         }
+
+         reader.readAsText(file);
+       });
+     }
+  </script>
+</head>
+<body>
+  <h2 id="error_msg" hidden="hidden"></h2>
+  <div style="text-align:center;">
+    <input id="files_input" type="file" multiple="multiple" placeholder="Choose a File" onchange="loadFiles()">
+  </div>
+  <div style="text-align:center;" id="container"></div>
+</body>

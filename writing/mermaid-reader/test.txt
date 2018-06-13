@@ -1,0 +1,46 @@
+manual tests (5):
+
+- Test load of a valid file:
+  1. Write and save a valid flow file
+  2. Open index.html
+  3. Upload the valid file
+  Expect: flow file rendered
+
+- Test load of a single invalid file:
+  1. Write and save an invalid flow file
+  2. Open index.html
+  3. Upload the invalid file
+  Expect: file doesn't render
+  Expect: error message containing file's name
+
+- Test load of multiple valid files
+  1. Write and save multiple valid flow files
+  2. Open index.html
+  3. Upload the valid files
+  Expect: all to render
+
+- Test load of multiple invalid files
+  1. Write and save multiple invalid flow files
+  2. Open index.html
+  3. Upload the invalid files
+  Expect: no file renders
+  Expect: error message containing all file names
+
+- Test load of a mix of valid and invalid files
+  1. Write and save a mix of valid and invalid flow files
+  2. Open index.html
+  3. Upload all the files created files
+  Expect: valid files render
+  Expect: invalid files won't render
+  Expect: error message contains all invalid file names
+  Expect: error message contains no valid file names
+
+Appendix (2):
+
+valid flow file:
+"s=>start
+e=>end
+s->e"
+
+invalid flow file:
+"invalid"

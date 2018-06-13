@@ -1,0 +1,31 @@
+graph TD
+
+A(("Hi"))
+A-->B["Incomprehensible sluring"]
+
+B-->C["unhappy(already drunk but understandable), want a drink"]
+C-->D{"Give..."}
+D-->|"water"|E1["unhappy"]
+D-->|"booze"|E2["returns to<br>constantly<br> being drunk"]
+E2-->Z2
+
+E1-->F["continues to sound depresed"]
+F-->G{"React?"}
+G-->|"confront about<br>alcoholism"|H1["angry denial"]
+H1-->Z2
+G-->|"ask if okay"|H2["Begins to open up"]
+G-->|"give drink"|E2
+
+H2-->I["SO breaks up w/ him"]
+I-->J{"confort by"}
+J-->|"Joking"|K1["upset but tollerant of joke"]
+J-->|"Sympathetic"|K2["greatful"]
+J-->|"Free Drink"|E2
+
+K1-->L["desperatly confides in you"]
+K2-->L
+
+L-->M{"React?"}
+M-->|"convince to<br>get clean"|Z1(("he gets<br>clean and<br>turns his<br>life around"))
+M-->|"give it time,<br>it'll get better"|Z2(("&quot;disapears&quot;"))
+
