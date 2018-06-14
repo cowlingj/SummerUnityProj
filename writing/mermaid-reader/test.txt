@@ -38,9 +38,8 @@ manual tests (5):
 Appendix (2):
 
 valid flow file:
-"s=>start
-e=>end
-s->e"
+"graph TD
+Test"
 
 invalid flow file:
 "invalid"
