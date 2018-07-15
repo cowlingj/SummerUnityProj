@@ -45,6 +45,59 @@ ModelImporter:
     100078: UpperArm_R
     100080: UpperLeg_L
     100082: UpperLeg_R
+    100084: Ankle.Target.L
+    100086: Ankle.Target.L_end
+    100088: Ankle.Target.R
+    100090: Ankle.Target.R_end
+    100092: Elbow.Pole.L
+    100094: Elbow.Pole.L_end
+    100096: Elbow.Pole.R
+    100098: Elbow.Pole.R_end
+    100100: FingersBase.L
+    100102: FingersBase.R
+    100104: FingersTips.L
+    100106: FingersTips.L_end
+    100108: FingersTips.R
+    100110: FingersTips.R_end
+    100112: Foot.Control.L
+    100114: Foot.Control.R
+    100116: Foot.L
+    100118: Foot.R
+    100120: FootRoll.L
+    100122: FootRoll.R
+    100124: Forearm.L
+    100126: Forearm.R
+    100128: Hand.Target.L
+    100130: Hand.Target.L_end
+    100132: Hand.Target.R
+    100134: Hand.Target.R_end
+    100136: HandBase.L
+    100138: HandBase.R
+    100140: Head_end
+    100142: Knee.Pole.L
+    100144: Knee.Pole.L_end
+    100146: Knee.Pole.R
+    100148: Knee.Pole.R_end
+    100150: LowerLeg.L
+    100152: LowerLeg.R
+    100154: ThumbBase.L
+    100156: ThumbBase.R
+    100158: ThumbTip.L
+    100160: ThumbTip.L_end
+    100162: ThumbTip.R
+    100164: ThumbTip.R_end
+    100166: Toe.L
+    100168: Toe.L_end
+    100170: Toe.R
+    100172: Toe.R_end
+    100174: ToeRoll.L
+    100176: ToeRoll.L_end
+    100178: ToeRoll.R
+    100180: ToeRoll.R_end
+    100182: UpperArm.L
+    100184: UpperArm.R
+    100186: UpperLeg.L
+    100188: UpperLeg.R
     400000: Ankle_Target_L
     400002: Ankle_Target_R
     400004: Armature
@@ -87,7 +140,63 @@ ModelImporter:
     400078: UpperArm_R
     400080: UpperLeg_L
     400082: UpperLeg_R
+    400084: Ankle.Target.L
+    400086: Ankle.Target.L_end
+    400088: Ankle.Target.R
+    400090: Ankle.Target.R_end
+    400092: Elbow.Pole.L
+    400094: Elbow.Pole.L_end
+    400096: Elbow.Pole.R
+    400098: Elbow.Pole.R_end
+    400100: FingersBase.L
+    400102: FingersBase.R
+    400104: FingersTips.L
+    400106: FingersTips.L_end
+    400108: FingersTips.R
+    400110: FingersTips.R_end
+    400112: Foot.Control.L
+    400114: Foot.Control.R
+    400116: Foot.L
+    400118: Foot.R
+    400120: FootRoll.L
+    400122: FootRoll.R
+    400124: Forearm.L
+    400126: Forearm.R
+    400128: Hand.Target.L
+    400130: Hand.Target.L_end
+    400132: Hand.Target.R
+    400134: Hand.Target.R_end
+    400136: HandBase.L
+    400138: HandBase.R
+    400140: Head_end
+    400142: Knee.Pole.L
+    400144: Knee.Pole.L_end
+    400146: Knee.Pole.R
+    400148: Knee.Pole.R_end
+    400150: LowerLeg.L
+    400152: LowerLeg.R
+    400154: ThumbBase.L
+    400156: ThumbBase.R
+    400158: ThumbTip.L
+    400160: ThumbTip.L_end
+    400162: ThumbTip.R
+    400164: ThumbTip.R_end
+    400166: Toe.L
+    400168: Toe.L_end
+    400170: Toe.R
+    400172: Toe.R_end
+    400174: ToeRoll.L
+    400176: ToeRoll.L_end
+    400178: ToeRoll.R
+    400180: ToeRoll.R_end
+    400182: UpperArm.L
+    400184: UpperArm.R
+    400186: UpperLeg.L
+    400188: UpperLeg.R
     2100000: Material
+    2100002: Material__TestDummyTexture
+    2100004: CrashMaterial__TestDummyTexture
+    2100006: CrashMaterial
     4300000: Model
     7400000: Idle
     7400002: T-Pose
@@ -95,7 +204,12 @@ ModelImporter:
     9500000: //RootNode
     13700000: Model
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 6f8070e85644144e1a3ca25320675f87, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -106,15 +220,36 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Walk' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
       retargeting quality.\n\t'Torso' has translation animation that will be discarded.\n"
-    animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Default
+      Take':\n\tRetargeting quality is good. No significant differences with original
+      animation were found.\n\nRetargeting quality report for clip 'Idle':\n\tRetargeting
+      quality is good. No significant differences with original animation were found.\n\nRetargeting
+      quality report for clip 'T-Pose':\n\tRetargeting quality is good. No significant
+      differences with original animation were found.\n\nRetargeting quality report
+      for clip 'Walk':\n\tLeftLowerLeg average position error 55.3 mm and maximum
+      position error 74.4 mm at time 0:10 (50.0%) Frame 10\n\tLeftFoot average position
+      error 55.3 mm and maximum position error 74.4 mm at time 0:10 (50.0%) Frame
+      10\n\tRightLowerLeg average position error 55.4 mm and maximum position error
+      74.4 mm at time 0: 0 (0.0%) Frame 0\n\tRightFoot average position error 55.3
+      mm and maximum position error 74.4 mm at time 0:10 (50.0%) Frame 10\n\tLeftUpperArm
+      average position error 55.3 mm and maximum position error 74.4 mm at time 0:20
+      (100.0%) Frame 20\n\tLeftLowerArm average position error 55.4 mm and maximum
+      position error 74.5 mm at time 0:20 (100.0%) Frame 20\n\tLeftHand average position
+      error 55.3 mm and maximum position error 74.4 mm at time 0:10 (50.0%) Frame
+      10\n\tRightUpperArm average position error 55.3 mm and maximum position error
+      74.4 mm at time 0:20 (100.0%) Frame 20\n\tRightLowerArm average position error
+      55.3 mm and maximum position error 74.4 mm at time 0: 0 (0.0%) Frame 0\n\tRightHand
+      average position error 55.3 mm and maximum position error 74.4 mm at time 0:10
+      (50.0%) Frame 10\n\tHead average position error 55.3 mm and maximum position
+      error 74.4 mm at time 0:20 (100.0%) Frame 20\n"
+    animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 3
