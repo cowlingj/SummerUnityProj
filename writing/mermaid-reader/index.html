@@ -39,13 +39,21 @@
      }
 
      function loadFiles() {
+       // remove the weird dmermaid-* divs
+       var toRemove = document.querySelector("[id^=dmermaid]");
+       while (toRemove !== null) {
+         toRemove.remove();
+         toRemove = document.querySelector("[id^=dmermaid]");
+       }
+
        clearParseErrors();
        document.getElementById("container").innerHTML = "";
        var fileList = document.getElementById("files_input").files;
        remainingToRead = fileList.length;
+
        Array.prototype.forEach.call(fileList, function(file, index){
          errorFileNames.push(file.name); // file is erroneous until it is rendered
-         
+
          var reader = new FileReader();
          
          reader.onload = function(event){
