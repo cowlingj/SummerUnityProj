@@ -1,0 +1,6 @@
+# .gitattributes encoding for version controlled files
+# default crlf behaviour
+* text=auto
+
+*.cs text
+*.blend binary
