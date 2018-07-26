@@ -1,0 +1,7 @@
+Apply a -90 rotation on the x-axis in object mode in Blender, followed by use of the Apply > Rotation command.
+Then, in the export screen (FBX) and set Y to forward and Z to up (that's positive Y and positive Z) works.
+
+One thing to be careful of is the notation -Y forward (Blender) which is WRONG (at least for exporting to Unity). It must be set to positive Y forward, NOT negative Y forward.
+
+
+Checkout `AssetPostprocessor`: http://wiki.unity3d.com/index.php/FixBlenderImportRotation
